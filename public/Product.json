@@ -1,0 +1,99 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://paikka.pet/cdn/shop/articles/1042066_1046012_PAIKKA_Visibility_Winter_Jacket_jungle_indigo_1.jpg?v=1731075881",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://headsupfortails.com/cdn/shop/products/DSC_010s0-Edit.jpg?v=1739045652&width=1445",
+    "category": "Grooming"
+  },
+
+  {
+    "serviceId": 3,
+    "serviceName": "Luxury Dog Spa & Massage",
+    "providerName": "PawParadise Wellness",
+    "providerEmail": "contact@pawparadise.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Full-body massage and spa treatment designed to relax and rejuvenate your dog during the winter season.",
+    "image": "https://www.shutterstock.com/image-photo/cute-australian-shepherd-dog-cosmetic-600nw-2503563387.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Custom Dog Boot Fitting",
+    "providerName": "CozyPaws Outfitters",
+    "providerEmail": "support@cozypaws.com",
+    "price": 20,
+    "rating": 4.7,
+    "slotsAvailable": 8,
+    "description": "Protective winter boots tailored for your dog's comfort and safety on snow and ice.",
+    "image": "https://classicphysiotherapy.co.uk/wp-content/uploads/2015/09/Eva5.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Health Checkup",
+    "providerName": "VetWell Clinic",
+    "providerEmail": "clinic@vetwell.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 6,
+    "description": "Comprehensive seasonal health assessment to ensure your pet stays healthy throughout winter.",
+    "image": "https://www.carecredit.com/sites/cc/image/pet_check_up_vet.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Winter Walking Training",
+    "providerName": "HappyTails Academy",
+    "providerEmail": "info@happytails.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Behavioural training focused on safe, enjoyable winter walks for dogs of all breeds.",
+    "image": "https://www.cleverhiker.com/wp-content/uploads/2022/01/Wallowas-Winter-082.jpg",
+    "category": "Training"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Heated Blanket Rental for Pets",
+    "providerName": "WarmNest Supplies",
+    "providerEmail": "rentals@warmnest.com",
+    "price": 15,
+    "rating": 4.6,
+    "slotsAvailable": 10,
+    "description": "Short-term rental of pet-safe heated blankets to keep dogs warm indoors or in transit.",
+    "image": "https://m.media-amazon.com/images/I/516DMkO0hGL._AC_.jpg",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Nutrition Consultation",
+    "providerName": "HealthyPup Nutritionists",
+    "providerEmail": "care@healthypup.com",
+    "price": 22,
+    "rating": 4.8,
+    "slotsAvailable": 7,
+    "description": "Custom diet planning to meet your dog’s nutritional needs during colder months.",
+    "image": "https://supertails.com/cdn/shop/articles/featured-image_58fb164c-d412-41ae-930d-67128246d818.webp?v=1760004554",
+    "category": "Nutrition"
+  }
+]
