@@ -1,13 +1,14 @@
 import React from "react";
 import logo from "../assets/Logo.jpg"
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
+import logouser from "../assets/user.png"
 
 const Navber = () => {
 
     const link =<>
-       <li><NavLink to="/">Home</NavLink></li>
-       <li><NavLink to="/prodect">Oll Prodect</NavLink></li>
-       <li><NavLink to="/profile">My Profile</NavLink></li>
+       <li className="font-bold"><NavLink to="/">Home</NavLink></li>
+       <li className="font-bold"><NavLink to="/prodect">Oll Prodect</NavLink></li>
+       <li className="font-bold"><NavLink to="/profile">My Profile</NavLink></li>
     </>
 
   return (
@@ -49,8 +50,11 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end flex gap-3">
+          <img src={logouser} alt="" />
+          <Link to="/auth/login">
+            <a className="btn hover:bg-gray-700 hover:text-white">Login</a>
+          </Link>
         </div>
       </div>
     </div>
