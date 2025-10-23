@@ -1,12 +1,12 @@
 import React from "react";
 
 const AllProdect = ({ simpoledata }) => {
-    const {providerName,price,image,description} =simpoledata;
+    const {providerName,image,description} =simpoledata;
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm">
         <figure>
-          <img
+          <img className="w-[500px] h-[400px]"
             src={image}
             alt="Shoes"
           />
