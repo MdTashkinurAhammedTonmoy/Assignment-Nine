@@ -70,7 +70,7 @@ const Navber = () => {
         </div>
         <div>{user && user.email}</div>
         <div className="navbar-end flex gap-3">
-          <img src={logouser} alt="" />
+          <img className="w-12 h-12 rounded-full" src={`${user ? user.photoURL:logouser}`} alt="" />
           {user ? (
             <button
               onClick={handleLogOut}
