@@ -5,6 +5,7 @@ import Prodect from "../Pages/Prodect/Prodect";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,10 @@ const router = createBrowserRouter([
         {
             path:"/prodect",
             loader:() => fetch('/Product.json'),
-            Component:Prodect
+            element:<PrivateRoute>
+              <Prodect></Prodect>
+            </PrivateRoute>
+            // Component:Prodect
         }
     ]
   },

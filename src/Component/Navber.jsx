@@ -1,15 +1,35 @@
-import React from "react";
-import logo from "../assets/Logo.jpg"
+import React, { use } from "react";
+import logo from "../assets/Logo.jpg";
 import { Link, NavLink } from "react-router";
-import logouser from "../assets/user.png"
+import logouser from "../assets/user.png";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navber = () => {
+  const { user, logout } = use(AuthContext);
+  const handleLogOut = () => {
+    console.log("User trying to logout");
+    logout()
+      .then(() => {
+        alert('You Loggedout successfull')
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  };
 
-    const link =<>
-       <li className="font-bold"><NavLink to="/">Home</NavLink></li>
-       <li className="font-bold"><NavLink to="/prodect">Oll Prodect</NavLink></li>
-       <li className="font-bold"><NavLink to="/profile">My Profile</NavLink></li>
+  const link = (
+    <>
+      <li className="font-bold">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/prodect">Oll Prodect</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/profile">My Profile</NavLink>
+      </li>
     </>
+  );
 
   return (
     <div>
@@ -46,15 +66,26 @@ const Navber = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {link}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
+        <div>{user && user.email}</div>
         <div className="navbar-end flex gap-3">
           <img src={logouser} alt="" />
-          <Link to="/auth/login">
-            <a className="btn hover:bg-gray-700 hover:text-white">Login</a>
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn hover:bg-gray-700 hover:text-white"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/auth/login"
+              className="btn hover:bg-gray-700 hover:text-white"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
