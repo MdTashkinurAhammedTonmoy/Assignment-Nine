@@ -68,23 +68,29 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
-        <div>{user && user.email}</div>
+        {/* <div>{user && user.email}</div> */}
         <div className="navbar-end flex gap-3">
-          <img className="w-12 h-12 rounded-full" src={`${user ? user.photoURL:logouser}`} alt="" />
+          <Link to="/profile"><img className="w-12 h-12 rounded-full" src={`${user ? user.photoURL:logouser}`} alt="" /></Link>
           {user ? (
             <button
               onClick={handleLogOut}
-              className="btn hover:bg-gray-700 hover:text-white"
+              className="btn btn-neutral hover:bg-red-300 hover:text-white"
             >
-              Logout
+              Log Out
             </button>
           ) : (
-            <Link
+            <>
+              <Link
               to="/auth/login"
-              className="btn hover:bg-gray-700 hover:text-white"
+              className="btn btn-neutral"
             >
               Login
             </Link>
+            <Link to="/auth/register" className="btn btn-neutral hover:bg-amber-300">
+              
+              Register
+            </Link>
+            </>
           )}
         </div>
       </div>

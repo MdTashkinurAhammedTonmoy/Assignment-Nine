@@ -4,7 +4,7 @@ const AllProdect = ({ simpoledata }) => {
     const {providerName,image,description} =simpoledata;
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-sm">
+      <div className="card bg-base-100 w-96 h-[400px] shadow-sm">
         <figure>
           <img className="w-[500px] h-[400px]"
             src={image}
