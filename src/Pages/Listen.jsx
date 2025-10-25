@@ -4,8 +4,8 @@ import { Link } from "react-router";
 
 const Listen = () => {
   return (
-    <div data-aos="fade-right" className="lg:flex w-11/12 mx-auto items-center justify-end">
-      <img className="w-[500px] h-[400px]" src={dog} alt="" />
+    <div data-aos="fade-right" className="lg:flex w-11/12 mx-auto items-center gap-5 justify-end">
+      <img className="w-[500px] h-[400px] transition-transform duration-500 hover:scale-105" src={dog} alt="" />
       <div className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">
           Dogs do speak, but only to those who know how to listen.

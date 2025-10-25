@@ -33,7 +33,7 @@ const Navber = () => {
 
   return (
     <div>
-      <div className="navbar px-10 shadow-sm bg-base-300">
+      <div className="navbar lg:px-10 shadow-sm bg-base-300">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,7 +62,7 @@ const Navber = () => {
           </div>
           <div className="flex items-center">
             <img className="h-16 w-16" src={logo} alt="" />
-            <a className="btn btn-ghost text-xl">PET CARE</a>
+            <a className="btn hidden lg:inline-flex btn-ghost text-xl">PET CARE</a>
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -6,7 +6,7 @@ const Prodect = () => {
     const data = useLoaderData();
     
     return (
-        <div className='grid grid-cols-4 w-11/12 mx-auto gap-5 py-10'>
+        <div className='lg:grid lg:grid-cols-4 grid-cols-1 w-11/12 mx-auto gap-5 py-10'>
             <Suspense fallback={<h3>Loding...</h3>}>
               {
                 data.map((simpoledata) => <AllProdect key={simpoledata.serviceId} simpoledata={simpoledata}></AllProdect> )

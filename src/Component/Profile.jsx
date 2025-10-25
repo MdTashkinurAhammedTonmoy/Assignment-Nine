@@ -18,11 +18,11 @@ const Profile = () => {
     };
   return (
     <div
-      className="bg-cover flex w-11/12 mx-auto m-5 p-10 justify-between items-center"
+      className="bg-cover lg:flex w-11/12 mx-auto m-5 p-10 justify-between items-center space-y-5"
       style={{ backgroundImage: `url(${bgimg})` }}
     >
       <div className="space-y-5">
-        <h2 className="text-6xl text-white font-bold">
+        <h2 className="lg:text-6xl text-3xl text-white font-bold">
           <span className="text-yellow-300">Animals</span> are silent teachers <br /> of unconditional{" "} <br />
           <span className="text-green-400">Love</span>
         </h2>
@@ -37,7 +37,7 @@ const Profile = () => {
         <button onClick={handleLogOut} className="btn bg-amber-200">Loge Out</button>
       </div>
       <div>
-        <img className="w-[400px] h-[500px]" src={user?.photoURL} alt="" />
+        <img className="w-[400px] lg:h-[500px] h-[400px] rounded-2xl " src={user?.photoURL} alt="" />
       </div>
     </div>
   );
