@@ -23,7 +23,7 @@ const Profile = () => {
     >
       <div className="space-y-5">
         <h2 className="text-6xl text-white font-bold">
-          Animals are silent teachers <br /> of unconditional{" "} <br />
+          <span className="text-yellow-300">Animals</span> are silent teachers <br /> of unconditional{" "} <br />
           <span className="text-green-400">Love</span>
         </h2>
         <div className="flex">

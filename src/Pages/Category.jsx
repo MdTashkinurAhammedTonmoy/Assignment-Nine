@@ -11,7 +11,7 @@ const Category = () => {
       <h3 className="text-2xl font-bold mb-3">
         <span className="border-b-2 border-amber-300">Services</span> Category
       </h3>
-      <div className="flex gap-10">
+      <div className="lg:flex md:space-y-3 gap-10">
         <Link to="/prodect">
           <div className="p-10 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-amber-50 flex flex-col text-center gap-3">
             <img className="w-[100px] h-[100px]" src={daycare} alt="" />

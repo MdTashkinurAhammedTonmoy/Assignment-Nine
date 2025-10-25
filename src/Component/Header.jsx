@@ -17,7 +17,7 @@ const Header = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-11/12 mx-auto my-10 rounded-2xl  h-[80vh]  overflow-hidden">
+    <div data-aos="fade-left" className="relative w-11/12 mx-auto my-10 rounded-2xl  h-[80vh]  overflow-hidden">
       {images.map((img, index) => (
         <div
           key={index}
