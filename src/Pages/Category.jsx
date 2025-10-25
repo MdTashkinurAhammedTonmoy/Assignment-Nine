@@ -13,25 +13,25 @@ const Category = () => {
       </h3>
       <div className="lg:flex items-center flex-row gap-10">
         <Link to="/prodect">
-          <div className="p-10 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-amber-50  text-center">
+          <div className="p-10 mb-5 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-amber-50  text-center">
             <img className="mb-3 w-[100px] h-[100px]" src={daycare} alt="" />
             <p className="font-semibold">Daycare</p>
           </div>
         </Link>
         <Link to="/prodect">
-          <div className="p-10 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-indigo-50 flex flex-col text-center gap-3">
+          <div className="p-10 mb-5 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-indigo-50 flex flex-col text-center gap-3">
             <img className="w-[100px] h-[100px]" src={grooming} alt="" />
             <h4 className="font-semibold">Grooming</h4>
           </div>
         </Link>
         <Link to="/prodect">
-          <div className="p-10 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-amber-50 flex flex-col text-center gap-3">
+          <div className="p-10 mb-5 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-amber-50 flex flex-col text-center gap-3">
             <img className="w-[100px] h-[100px]" src={healthcare} alt="" />
             <h4 className="font-semibold">Healthcare</h4>
           </div>
         </Link>
         <Link to="/prodect">
-          <div className="p-10 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-indigo-50 flex flex-col text-center gap-3">
+          <div className="p-10 mb-5 rounded-[10px] hover:scale-105 shadow-lg duration-500 border border-gray-200 bg-indigo-50 flex flex-col text-center gap-3">
             <img className="w-[100px] h-[100px]" src={hyginc} alt="" />
             <h4 className="font-semibold">Hyginc</h4>
           </div>

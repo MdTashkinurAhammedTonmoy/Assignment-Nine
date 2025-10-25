@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Profile from "../Component/Profile";
+import Loding from "../Pages/Loding";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,9 @@ const router = createBrowserRouter([
             loader:() => fetch('/Product.json'),
             element:<PrivateRoute>
               <Prodect></Prodect>
-            </PrivateRoute>
+            </PrivateRoute>,
+            hydrateFallbackElement:<Loding></Loding>
+            
         },
         {
         path:"/profile",

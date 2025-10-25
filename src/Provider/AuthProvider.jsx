@@ -1,64 +1,3 @@
-// import React, { createContext, useEffect, useState } from "react";
-// import app from "../firebase/firebase.config";
-// export const AuthContext = createContext();
-// import {
-//   createUserWithEmailAndPassword,
-//   getAuth,
-//   onAuthStateChanged,
-//   signInWithEmailAndPassword,
-//   signOut,
-//   updateProfile,
-// } from "firebase/auth";
-
-// const auth = getAuth(app);
-// const AuthProvider = ({ children }) => {
-//   const [user, setUser] = useState(null);
-//   const [loading,setLoding] = useState(true);
-
-//   console.log(loading,user);
-
-//   const createUser = (email, password) => {
-//     setLoding(true);
-//     return createUserWithEmailAndPassword(auth, email, password);
-//   };
-
-//   const signIn = (email, password) => {
-//     setLoding(true);
-//     return signInWithEmailAndPassword(auth, email, password);
-//   };
-
-//   const updateUser = (updatedData) => {
-//     return updateProfile(auth.currentUser , updatedData)
-//   }
-
-//   const logout = () => {
-//     return signOut(auth);
-//   };
-
-//   useEffect(() => {
-//     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-//       setUser(currentUser);
-//       setLoding(false);
-//     });
-//     return () => {
-//       unsubscribe();
-//     };
-//   }, []);
-
-//   const authdata = {
-//     user,
-//     setUser,
-//     createUser,
-//     logout,
-//     signIn,
-//     loading,
-//     setLoding,
-//     updateUser
-//   };
-//   return<AuthContext value={authdata}>{children}</AuthContext>;
-// };
-
-// export default AuthProvider;
 
 
 import React, { createContext, useEffect, useState } from "react";
@@ -67,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -97,6 +37,12 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+
+  // const forgetpass = getAuth();
+  // sendPasswordResetEmail(auth,email)
+  // .then(())
+
+  
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

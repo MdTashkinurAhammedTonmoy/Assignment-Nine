@@ -85,7 +85,6 @@ export default function ContactUs() {
             </div>
 
             <button
-              type="submit"
               className="bg-red-600 text-white font-semibold rounded-full px-8 py-2 hover:bg-red-700 transition"
             >
               Send

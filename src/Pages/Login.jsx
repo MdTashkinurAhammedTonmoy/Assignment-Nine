@@ -1,74 +1,98 @@
-// import React, { use, useState,} from "react";
-// import { Link, useLocation, useNavigate } from "react-router";
+
+
+// import React, { useContext } from "react";
+// import { Link } from "react-router-dom";
 // import { AuthContext } from "../Provider/AuthProvider";
+// import Profile from "../Component/Profile";
+//  import { ToastContainer, toast } from 'react-toastify';
 
 // const Login = () => {
-//     const [error,setError] = useState("");
-//   const { signIn } = use(AuthContext);
-//   const location = useLocation();
-//   const navigate = useNavigate();
-//   const hendleLogin = (e) => {
-//     e.preventDefault();
-//     const form = e.target;
-//     const email = form.email.value;
-//     const password = form.password.value;
-//     console.log({ email, password });
-//     signIn(email,password)
-//       .then((result) => {
-//         const user = result.user;
-//         console.log(user);
-//         navigate(`${location.state?location.state : "/prodect"}`)
+//   const { signIn, setUser, user,logout } = useContext(AuthContext);
+
+//   const handleLogOut = () => {
+//     console.log("User trying to logout");
+//     logout()
+//       .then(() => {
+//         toast.success("You Loggedout successfull")
 //       })
 //       .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         // alert(errorCode,errorMessage);
-//         setError(errorCode);
+//         console.log(error)
 //       });
 //   };
+
+//   const handleLogin = (e) => {
+//     e.preventDefault();
+//     const form = e.target;
+//     const email = form.email.value.trim();
+//     const password = form.password.value;
+
+//     signIn(email, password)
+//       .then((result) => {
+//         // console.log("Logged in:", result.user);
+//         setUser(result.user);
+//         toast.success("You Login successfull")
+//       })
+//       .catch((err) => {
+//         console.error("Login error:", err);
+//         toast.error(err.message);
+//       });
+      
+//   };
+  
+
+//   // console.log(user);
+
 //   return (
 //     <div className="flex justify-center min-h-screen items-center">
-//       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
-//         <h2 className="font-semibold text-2xl text-center">
+//       <div className="card bg-base-100 w-full max-w-sm shadow-2xl py-5">
+//         {user ? <h2 className="font-semibold text-2xl text-center">My Profile</h2> : <h2 className="font-semibold text-2xl text-center">
 //           Login Your Account
-//         </h2>
-//         <form onSubmit={hendleLogin} className="card-body">
-//           <fieldset className="fieldset">
-//             {/* email */}
-//             <label className="label">Email</label>
-//             <input
-//               type="email"
-//               name="email"
-//               className="input"
-//               placeholder="Email"
-//               required
-//             />
-//             {/* password */}
-//             <label className="label">Password</label>
-//             <input
-//               type="password"
-//               name="password"
-//               className="input"
-//               placeholder="Password"
-//               required
-//             />
-//             <div>
-//               <a className="link link-hover">Forgot password?</a>
-//             </div>
+//         </h2>}
+//         {user ? (
+//           <div className='text-center space-y-3'>
+//             <img className='h-20 w-20 rounded-full mx-auto' src={user?.photoURL} alt="" />
+//             <h2 className='text-2xl font-semibold'>{user?.displayName}</h2>
+//             <p>{user?.email}</p>
+//             <button onClick={handleLogOut} className='btn bg-amber-200'>Sign Out</button>
+//         </div>
+//         ) : (
+//           <form onSubmit={handleLogin} className="card-body">
+//             <fieldset className="fieldset">
+//               <label className="label">Email</label>
+//               <input
+//                 type="email"
+//                 name="email"
+//                 className="input"
+//                 placeholder="Email"
+//                 required
+//               />
 
-//             {error && <p className="text-red-500 text-xs">{error}</p>}
+//               <label className="label">Password</label>
+//               <input
+//                 type="password"
+//                 name="password"
+//                 className="input"
+//                 placeholder="Password"
+//                 required
+//               />
 
-//             <button type="submit" className="btn btn-neutral mt-4">
-//               Login
-//             </button>
-//             <p className="font-semibold pt-5 text-center">
-//               Dont't Have An Account ?{" "}
-//               <Link className="text-red-500" to="/auth/register">
-//                 Register
-//               </Link>
-//             </p>
-//           </fieldset>
-//         </form>
+//               <div>
+//                 <a className="link link-hover">Forgot password?</a>
+//               </div>
+
+//               <button type="submit" className="btn btn-neutral mt-4">
+//                 Login
+//               </button>
+
+//               <p className="font-semibold pt-5 text-center">
+//                 Don't have an account?{" "}
+//                 <Link className="text-red-500" to="/auth/register">
+//                   Register
+//                 </Link>
+//               </p>
+//             </fieldset>
+//           </form>
+//         )}
 //       </div>
 //     </div>
 //   );
@@ -76,22 +100,26 @@
 
 // export default Login;
 
+
+
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import Profile from "../Component/Profile";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import app from "../firebase/firebase.config";
 
 const Login = () => {
-  const { signIn, setUser, user,logout } = useContext(AuthContext);
+  const { signIn, setUser, user, logout } = useContext(AuthContext);
 
   const handleLogOut = () => {
-    console.log("User trying to logout");
     logout()
       .then(() => {
-        alert('You Loggedout successfull')
+        toast.success("You Logged out successfully");
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
       });
   };
 
@@ -103,32 +131,58 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log("Logged in:", result.user);
         setUser(result.user);
+        toast.success("Login successful");
       })
       .catch((err) => {
-        console.error("Login error:", err);
-        alert(err.message);
+        toast.error(err.message);
       });
-      
   };
-  
 
-  console.log(user);
+  const handleForgetPassword = () => {
+    const email = document.querySelector('input[name="email"]').value;
+    console.log(email)
+    if (!email) {
+      toast.error("Please enter your email first");
+      return;
+    }
+
+    const auth = getAuth(app);
+
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.success("Password reset email sent! Check your inbox.");
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div className="flex justify-center min-h-screen items-center">
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl py-5">
-        {user ? <h2 className="font-semibold text-2xl text-center">My Profile</h2> : <h2 className="font-semibold text-2xl text-center">
-          Login Your Account
-        </h2>}
         {user ? (
-          <div className='text-center space-y-3'>
-            <img className='h-20 w-20 rounded-full mx-auto' src={user?.photoURL} alt="" />
-            <h2 className='text-2xl font-semibold'>{user?.displayName}</h2>
+          <h2 className="font-semibold text-2xl text-center">My Profile</h2>
+        ) : (
+          <h2 className="font-semibold text-2xl text-center">
+            Login Your Account
+          </h2>
+        )}
+
+        {user ? (
+          <div className="text-center space-y-3">
+            <img
+              className="h-20 w-20 rounded-full mx-auto"
+              src={user?.photoURL}
+              alt=""
+            />
+            <h2 className="text-2xl font-semibold">{user?.displayName}</h2>
             <p>{user?.email}</p>
-            <button onClick={handleLogOut} className='btn bg-amber-200'>Sign Out</button>
-        </div>
+            <button onClick={handleLogOut} className="btn bg-amber-200">
+              Sign Out
+            </button>
+          </div>
         ) : (
           <form onSubmit={handleLogin} className="card-body">
             <fieldset className="fieldset">
@@ -151,7 +205,13 @@ const Login = () => {
               />
 
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <button
+                  type="button"
+                  onClick={handleForgetPassword}
+                  className="link link-hover text-blue-500"
+                >
+                  Forgot password?
+                </button>
               </div>
 
               <button type="submit" className="btn btn-neutral mt-4">

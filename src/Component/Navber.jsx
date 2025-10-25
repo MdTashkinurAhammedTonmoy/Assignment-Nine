@@ -3,6 +3,7 @@ import logo from "../assets/Logo.jpg";
 import { Link, NavLink } from "react-router";
 import logouser from "../assets/user.png";
 import { AuthContext } from "../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Navber = () => {
   const { user, logout } = use(AuthContext);
@@ -10,7 +11,7 @@ const Navber = () => {
     console.log("User trying to logout");
     logout()
       .then(() => {
-        alert('You Loggedout successfull')
+        toast.success('You Loggedout successfull')
       })
       .catch((error) => {
         console.log(error)
@@ -92,6 +93,7 @@ const Navber = () => {
             </Link>
             </>
           )}
+          <ToastContainer />
         </div>
       </div>
     </div>
